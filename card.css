@@ -1,0 +1,314 @@
+*,*::after,*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --black: #000;
+    --shadow: rgba(0,0,0,0.6);
+    --white: #fff;
+    --dwhite: #e9ecec;
+    --rose: #f80bf6;
+    --pur: purple;
+    --lemon: #48ff57;
+    --blue: #454ef8;
+    --yellow: #ffe400;
+    --cyan: #00f5ff;
+    --red: #ff0000;
+    font-family: Monospace;
+}
+.intro {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+}
+.intro > h1 {
+    background-size: 400px;
+    font-size: 4.5em;
+    background: linear-gradient(135deg,var(--rose) 30%, var(--cyan) 50%, var(--lemon) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow
+    6s linear infinite;
+}
+@keyframes glow {
+    0% {
+        background-position: 0px;
+    }
+
+    100% {
+        background-position: 1000px;
+    }
+}
+.session {
+    position: absolute;
+
+}
+.main {
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    overflow: scroll;
+    flex-direction: column;
+}
+.welcome {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 95%;
+    height: 200px;
+    padding: 5px;
+    border-radius: 0 0 40px 40px;
+    box-shadow: 1px 1px 1px 0.5px var(--shadow);
+}
+.welcome .heading {
+    font-size: 3em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: hidex
+    5s steps(100) infinite;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+
+@keyframes hidex {
+    0% {
+        width: 0ch;
+    }
+    50% {
+        width: 13ch;
+    }
+    100% {
+        width: 0;
+    }
+
+}
+.welcome  h3 {
+    background: linear-gradient(135deg,var(--cyan) 20%,var(--blue) 55%, var(--lemon) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow
+    10s linear infinite;
+    line-height: 2em;
+
+}
+.toolbox {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: spin
+    6s linear infinite;
+    bottom: 100px;
+
+}
+.tool-circle {
+
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(120deg,var(--lemon)20%, var(--blue) 100%);
+    border-radius: 50%;
+    z-index: 5;
+}
+.tool-circle > p {
+    position: absolute;
+    color: var(--pur);
+    font-size: 1.7em;
+    top: 100px;
+    left: 70px;
+}
+.icon1, .icon2 {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--blue);
+    border-radius: 50%;
+    color: var(--lemon);
+    visibility: hidden;
+    transition: all 4s ease;
+}
+.iconTip {
+    background: var(--shadow);
+    position: absolute;
+    border-radius: 5px;
+    padding: 15px;
+
+    color: var(--white);
+    word-break: break-word;
+    z-index: 6;
+    top: 100px;
+}
+.icon1 {
+    position: relative;
+    top: 0px;
+    left: 50px;
+}
+.icon2 {
+    position: relative;
+    top: 0px;
+    left: 50px;
+}
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.foot {
+    width: 95%;
+    height: 50px;
+    border-radius: 20px;
+    background: linear-gradient(to
+    right,var(--blue) 30%, var(--lemon) 100%);
+    position: relative;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.foot  i {
+    color: var(--cyan);
+    font-size: 2em;
+}
+.record {
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.record label {
+    background: linear-gradient(135deg,var(--cyan) 20%,var(--blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow
+    10s linear infinite;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 5px 0;
+}
+#archive-name,#data {
+    width: 300px;
+    height: 50px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    word-wrap: break-word;
+    transition: all 1s linear;
+    border-radius: 5px;
+    border: 2px groove var(--black);
+    margin: 20px 0;
+    box-shadow: 1px 1px 3px 0.3px var(--lemon);
+}
+
+#archive-name::placeholder,#data::placeholder {
+    font-family: Courier;
+}
+.record-head {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    box-shadow: 1px 1px 1px var(--shadow);
+}
+.record-head > i {
+    font-size: 2em;
+    color: var(--blue);
+}
+#color {
+    width: 100px;
+    background: var(--lemon);
+    outline: none;
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+}
+#create-note {
+    width: 300px;
+    height: 50px;
+    color: var(--white);
+    background: var(--cyan);
+    border: none;
+    outline: none;
+    font-family: Courier;
+    font-weight: bold;
+    font-size: 1.4em;
+    border-radius: 5px;
+}
+.flashcard {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--dwhite);
+}
+
+#goToRecord {
+    color: var(--blue);
+    font-size: 1.6em;
+    position: fixed;
+    left: 10px;
+    top: 7px;
+}
+.flashcard-main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    overflow: scroll;
+    width: 95%;
+    height: 90vh;
+    border-radius: 15px;
+    box-shadow: 1px 1px 3px 0.4px var(--shadow),
+    -1px -1px 3px 0.4px var(--shadow);
+    margin-top: 35px;
+}
+.note-data {
+    display: flex;
+    margin: 5px;
+    justify-content: space-around;
+    align-items: center;
+    width: 305px;
+    height: 100px;
+    word-break: break-word;
+    overflow: scroll;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 1px 1px 3px 0.4px var(--shadow);
+}
+.notetip {
+    background: var(--shadow);
+    position: absolute;
+    border-radius: 5px;
+    padding: 15px;
+
+    color: var(--white);
+    word-break: break-word;
+    z-index: 6;
+}
+#remove-note-box {
+    position: relative;
+    right: 10px;
+
+    color: var(--white);
+    font-size: 2.3em;
+}

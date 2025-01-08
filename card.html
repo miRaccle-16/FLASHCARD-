@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="card.css">
+    <link rel="stylesheet" href="fontawesome-free-6.5.2-web/css/all.css">
+    <title>Flash Idea</title>
+</head>
+
+<body>
+
+    <div class="intro">
+        <h1>FlashIdea</h1>
+    </div>
+
+    <div class="main">
+        <div class="welcome">
+            <h3 class="heading">FlashIdea</h3>
+            <h3>A journal where all Your thoughts,facts,and ideas are wrapped</h3>
+        </div>
+
+
+
+        <div class="toolbox">
+
+            <div class="tool-circle">
+                <p>
+                    Tap me
+                </p>
+                <div class="icon1">
+                    <i class="fa fa-pencil"></i>
+                </div>
+
+                <div class="icon2">
+                    <i class="fa fa-brush"></i>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="foot">
+            <i class="fa fa-arrow-left"></i>
+            <i class="fa fa-arrow-right" id="direct-to-record"></i>
+        </div>
+    </div>
+
+
+    <div class="record">
+        <div class="record-head">
+            <i class="fa fa-arrow-left" id="goToMain"></i>
+        </div>
+
+        <label for="archive-name">ARCHIVE NAME: </label>
+        <input type="text" placeholder="Enter name of archive" id="archive-name">
+
+        <label for="color">SELECT COLOR👇👇: </label>
+        <input type="color" id="color">
+
+        <label for="data">TEXT</label>
+        <input type="text" placeholder="Enter Info,fact or data to store." id="data">
+
+        <button id="create-note">Create Note</button>
+    </div>
+
+
+    <div class="flashcard">
+        <i class="fa fa-arrow-left" id="goToRecord"></i>
+        <div class="flashcard-main">
+
+        </div>
+    </div>
+    <script src="card.js">
+
+    </script>
+</body>
+</html>
